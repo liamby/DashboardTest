@@ -1,82 +1,27 @@
-document.addEventListener('DOMContentLoaded', function () {
+/*
+MAIN.JS
 
-    var TodaysMoodJournal = document.querySelector('#TodaysMoodJournal');
-    var Stats = document.querySelector('#Stats');
-    var Calendar = document.querySelector('#Calendar');
-    var Settings = document.querySelector('#Settings');
-    
-    var TodaysMoodJournalIcon = document.querySelector('#TodaysMoodJournalIcon');
-    var StatsIcon = document.querySelector('#StatsIcon');
-    var CalendarIcon = document.querySelector('#CalendarIcon');
-    var SettingsIcon = document.querySelector('#SettingsIcon');
+This file contains the code for passing data between the google astion
+(the conversation) and the front end. When the data object changes then 
+the onupdate function "clicks" the appropriate icon to change the pages 
+on display.
+*/
 
-    var projectsList = document.querySelector('#CalendarDays');
-    var modeSwitch = document.querySelector('.mode-switch');
-    var listView = document.querySelector('.list-view');
-    var gridView = document.querySelector('.grid-view');
+interactiveCanvas.ready({
+    onUpdate(data) {
 
-    modeSwitch.addEventListener('click', function () {
-      document.documentElement.classList.toggle('dark');
-      modeSwitch.classList.toggle('active');
-    });
+        if (data[0].scene == 'TodaysMoodJournal') {
+            document.querySelector('#TodaysMoodJournalIcon').click();
 
-    listView.addEventListener('click', function () {
-      gridView.classList.remove('active');
-      listView.classList.add('active');
-      projectsList.classList.remove('jsGridView');
-      projectsList.classList.add('jsListView');
-    });
+        } else if (data[0].scene == 'Stats') {
+            document.querySelector('#StatsIcon').click();
 
-    gridView.addEventListener('click', function () {
-      gridView.classList.add('active');
-      listView.classList.remove('active');
-      projectsList.classList.remove('jsListView');
-      projectsList.classList.add('jsGridView');
-    });
+        } else if (data[0].scene == 'Calendar') {
+            document.querySelector('#CalendarIcon').click();
 
-    TodaysMoodJournalIcon.addEventListener('click', function () {
-      TodaysMoodJournal.style.display = 'block';
-      Stats.style.display = 'none';
-      Calendar.style.display = 'none';
-      Settings.style.display = 'none';
-      TodaysMoodJournalIcon.classList.add('active');
-      StatsIcon.classList.remove('active');
-      CalendarIcon.classList.remove('active');
-      SettingsIcon.classList.remove('active');
-    });
+        } else if (data[0].scene == 'Settings') {
+            document.querySelector('#SettingsIcon').click();
+        }
 
-    StatsIcon.addEventListener('click', function () {
-        TodaysMoodJournal.style.display = 'none';
-        Stats.style.display = 'block';
-        Calendar.style.display = 'none';
-        Settings.style.display = 'none';
-        TodaysMoodJournalIcon.classList.remove('active');
-        StatsIcon.classList.add('active');
-        CalendarIcon.classList.remove('active');
-        SettingsIcon.classList.remove('active');
-    });
-
-    CalendarIcon.addEventListener('click', function () {
-        TodaysMoodJournal.style.display = 'none';
-        Stats.style.display = 'none';
-        Calendar.style.display = 'block';
-        Settings.style.display = 'none';
-        TodaysMoodJournalIcon.classList.remove('active');
-        StatsIcon.classList.remove('active');
-        CalendarIcon.classList.add('active');
-        SettingsIcon.classList.remove('active');
-    });
-
-    SettingsIcon.addEventListener('click', function () {
-        TodaysMoodJournal.style.display = 'none';
-        Stats.style.display = 'none';
-        Calendar.style.display = 'none';
-        Settings.style.display = 'block';
-        TodaysMoodJournalIcon.classList.remove('active');
-        StatsIcon.classList.remove('active');
-        CalendarIcon.classList.remove('active');
-        SettingsIcon.classList.add('active');
-    });
-
-    
-  });
+    }
+});

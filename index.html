@@ -14,7 +14,7 @@
 </head>
 
 <body translate="no" data-new-gr-c-s-check-loaded="14.1047.0" data-gr-ext-installed="">
-  <div class="app-container">
+  <div class="app-container" id = "app">
     <div class="app-content">
 
       <!--- SIDEBAR --->
@@ -87,45 +87,11 @@
             </div>
           </div>
           <!--- TAGS --->
-          <div class="project-box-wrapper">
+          <div class="project-box-wrapper" v-for="entity in entities" :key="entity.Name">
             <div class="project-box" style="background-color: #fee4cb;">
               <div class="project-box-content-header">
-                <p class="box-content-header">Placeholder</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #e9e7fd;">
-              <div class="project-box-content-header">
-                <p class="box-content-header">Placeholder</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #ffd3e2;">
-              <div class="project-box-content-header">
-                <p class="box-content-header">Placeholder</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #c8f7dc;">
-              <div class="project-box-content-header">
-                <p class="box-content-header">Placeholder</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #d5deff;">
-              <div class="project-box-content-header">
-                <p class="box-content-header">Placeholder</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #dbf6fd;">
-              <div class="project-box-content-header">
-                <p class="box-content-header">Placeholder</p>
+                <p class="box-content-header">
+                  {{ entity.Name }}</p>
               </div>
             </div>
           </div>
@@ -323,8 +289,14 @@
 
     </div>
   </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+  <script src="vue.js"></script>
 
   <script src="main.js"></script>
+
+  <script src="index.js"></script>
 
 </body>
 
