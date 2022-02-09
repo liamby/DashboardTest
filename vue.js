@@ -9,8 +9,8 @@ var app = new Vue({
     el: '#app',
 
     data: {
-        calendarDays: null,
-        User
+        //calendarDays: null,
+        ///User
     },
 
     methods: {
