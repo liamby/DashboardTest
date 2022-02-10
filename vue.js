@@ -29,7 +29,9 @@ var app = new Vue({
         year: undefined,
         calendarData: undefined
     },
-
+    mount(){
+        this.changeScene(sceneParam);
+    },
     methods: {
         // 
         getCalendarData() {

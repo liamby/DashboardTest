@@ -6,12 +6,18 @@ This file contains the code for passing data between the google astion
 the onupdate function "clicks" the appropriate icon to change the pages 
 on display.
 */
-const vm = app.mount("#app");
 
 interactiveCanvas.ready({
     onUpdate(data) {
         
         //Display the correct page
-        vm.changeScene(data[0].scene);
+        if(typeof data[0].scene != 'undefined'){
+            app.changeScene(data[0].scene);
+        }
+        //Display the mood
+        if(typeof data[0].mood != 'undefined'){
+            app.mood = data[0].mood;
+        }
+        
     }
 });
