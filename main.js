@@ -12,6 +12,8 @@ interactiveCanvas.ready({
         
         //Display the correct page
         this.scene = data[0].scene;
+        console.log("Interactive canvas was passed" + data[0].scene);
+        console.log("This.scene = " + this.scene);
 
         this.viewMode = data[0].viewMode;
     }
