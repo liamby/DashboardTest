@@ -9,19 +9,10 @@ on display.
 
 interactiveCanvas.ready({
     onUpdate(data) {
+        
+        //Display the correct page
+        this.scene = data[0].scene;
 
-        if (data[0].scene == 'TodaysMoodJournal') {
-            document.querySelector('#TodaysMoodJournalIcon').click();
-
-        } else if (data[0].scene == 'Stats') {
-            document.querySelector('#StatsIcon').click();
-
-        } else if (data[0].scene == 'Calendar') {
-            document.querySelector('#CalendarIcon').click();
-
-        } else if (data[0].scene == 'Settings') {
-            document.querySelector('#SettingsIcon').click();
-        }
-
+        this.viewMode = data[0].viewMode;
     }
 });

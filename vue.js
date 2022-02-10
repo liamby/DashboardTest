@@ -9,16 +9,50 @@ var app = new Vue({
     el: '#app',
 
     data: {
-        //calendarDays: null,
-        ///User
+        // Display Settings
+        scene: "moodJournal",
+        activeIcon: 'moodJournal',
+        calendarView: 'jsGridView',
+        viewMode: 'light',
+
+        // User Settings
+        userFirstName: "",
+        userImgURL: "",
+        
+        // Mood Data
+        mood: undefined,
+        journalEntry: undefined,
+        tags: undefined,
+        day: undefined,
+        month: undefined,
+        date: undefined,
+        year: undefined,
+        calendarData: undefined
     },
 
     methods: {
-
-        // Retrieves all the users past Journal Entries.
-        getCalendarData (){
+        // 
+        getCalendarData() {
 
         },
+        //
+        getDayData() {
 
+        },
+        //
+        changeScene(sceneParam) {
+            this.scene = sceneParam;
+            this.activeIcon = sceneParam;
+            console.log(sceneParam);
+        },
+        //
+        changeMode(){
+            document.documentElement.classList.toggle('dark');
+            document.querySelector('.mode-switch').classList.toggle('active');
+        },
+        //
+        changeCalendarView(calendarView){
+            this.calendarView = calendarView;
+        }
     }
 });

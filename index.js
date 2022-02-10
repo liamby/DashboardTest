@@ -7,10 +7,12 @@ pages are displayed appropriately.
 */
 
 // Initialise Variables
+/*
 var TodaysMoodJournal = document.querySelector('#TodaysMoodJournal');
 var Stats = document.querySelector('#Stats');
 var Calendar = document.querySelector('#Calendar');
 var Settings = document.querySelector('#Settings');
+var MoodJournal = document.querySelector('#MoodJournal');
 
 var TodaysMoodJournalIcon = document.querySelector('#TodaysMoodJournalIcon');
 var StatsIcon = document.querySelector('#StatsIcon');
@@ -42,11 +44,13 @@ gridView.addEventListener('click', function () {
   projectsList.classList.add('jsGridView');
 });
 
+// Event Listeners for Sidebar
 TodaysMoodJournalIcon.addEventListener('click', function () {
   TodaysMoodJournal.style.display = 'block';
   Stats.style.display = 'none';
   Calendar.style.display = 'none';
   Settings.style.display = 'none';
+  MoodJournal.style.display = 'none';
   TodaysMoodJournalIcon.classList.add('active');
   StatsIcon.classList.remove('active');
   CalendarIcon.classList.remove('active');
@@ -58,6 +62,7 @@ StatsIcon.addEventListener('click', function () {
   Stats.style.display = 'block';
   Calendar.style.display = 'none';
   Settings.style.display = 'none';
+  MoodJournal.style.display = 'none';
   TodaysMoodJournalIcon.classList.remove('active');
   StatsIcon.classList.add('active');
   CalendarIcon.classList.remove('active');
@@ -69,6 +74,7 @@ CalendarIcon.addEventListener('click', function () {
   Stats.style.display = 'none';
   Calendar.style.display = 'block';
   Settings.style.display = 'none';
+  MoodJournal.style.display = 'none';
   TodaysMoodJournalIcon.classList.remove('active');
   StatsIcon.classList.remove('active');
   CalendarIcon.classList.add('active');
@@ -80,8 +86,10 @@ SettingsIcon.addEventListener('click', function () {
   Stats.style.display = 'none';
   Calendar.style.display = 'none';
   Settings.style.display = 'block';
+  MoodJournal.style.display = 'none';
   TodaysMoodJournalIcon.classList.remove('active');
   StatsIcon.classList.remove('active');
   CalendarIcon.classList.remove('active');
   SettingsIcon.classList.add('active');
 });
+*/
